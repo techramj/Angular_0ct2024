@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 01FirstDemo
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.10.
@@ -25,3 +26,58 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+=======
+# Selector
+1. three type of selector
+a. element selector
+b. attribute selector
+c. class selector
+
+## element selector
+```
+@Component({
+  selector: 'app-comp-a', 
+  standalone: true,
+  imports: [],
+  templateUrl: './comp-a.component.html',
+  styleUrl: './comp-a.component.css'
+})
+
+<app-comp-a></app-comp-a>
+```
+
+## attribute selector
+```
+@Component({
+  selector: '[app-comp-b]',
+  standalone: true,
+  imports: [],
+  templateUrl: './comp-a.component.html',
+  styleUrl: './comp-a.component.css'
+})
+<p app-comp-b></p>
+```
+
+## class selector
+```
+@Component({
+  selector: '.app-comp-c',
+  standalone: true,
+  imports: [],
+  templateUrl: './comp-a.component.html',
+  styleUrl: './comp-a.component.css'
+})
+
+<p class="app-comp-c" ></p>
+```
+
+
+# conditonal if else
+## @for
+## using directive ngIf
+
+
+# iteration
+## @for(item of items; track #trackingProperty){}
+## <p *ngFor="let item of items"></p>
+>>>>>>> a4f3e4f (day2)

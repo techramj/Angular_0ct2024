@@ -1,5 +1,26 @@
+<!--
 <div>
-    <p>Name: Jack</p>
-    <p>Age: 20</p>
-    <p>Nationality: US</p>
+    <h3>Name: {{name}}</h3>
+    @if(age){
+        <p>Age: {{age}}</p>
+    }
+
+    @if(nationality){
+        <p>Nationality: {{nationality}}</p>
+    }
+
+    @else{
+        <p>Nationality: ****</p>
+    }
 </div>
+-->
+
+<div>
+    <h3>Name: {{name}}</h3>
+    <p *ngIf="age">Age: {{age}}</p>
+    <p *ngIf="nationality; else dummyNationality">Nationality: {{nationality}}</p>
+    <ng-template #dummyNationality>
+        <p>Nationality: *****</p>
+    </ng-template>
+</div>
+<hr>

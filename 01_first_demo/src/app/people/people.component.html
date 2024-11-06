@@ -1,0 +1,17 @@
+<!--div>
+    <app-person [name]="people[0].name" [age]="people[0].age" [nationality]="people[0].nationality" />
+    <app-person [name]="people[1].name" [age]="people[1].age" [nationality]="people[1].nationality" />
+    <app-person [name]="people[2].name" [age]="people[2].age"  />
+    <app-person [name]="people[3].name"  [nationality]="people[3].nationality" />
+</div-->
+
+
+<!--div>
+    @for(p of people; track p.name){
+        <app-person [name]="p.name" [age]="p.age" [nationality]="p.nationality" />   
+    }
+</div-->
+
+<div *ngFor="let p of people">
+    <app-person [name]="p.name" [age]="p.age" [nationality]="p.nationality" /> 
+</div>
