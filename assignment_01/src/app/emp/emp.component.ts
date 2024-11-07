@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Employee } from '../employee';
 
 @Component({
@@ -15,4 +15,15 @@ export class EmpComponent {
    */
   //@Input({required:true})emp!:{id:number,name:string,salary:number};
   @Input({required:true}) emp!:Employee;
+
+  @Output() increment = new EventEmitter<Employee>();
+
+  name:string ='jack';
+
+
+  incrementSalary(){
+    console.log("incrementSalary called...")
+    //this.emp.salary = this.emp.salary + 500;
+    this.increment.emit(this.emp);
+  }
 }

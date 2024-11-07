@@ -1,0 +1,7 @@
+
+<ul id="users">
+    @for(user of users; track user.id){
+        <app-user [id]="user.id" [name]="user.name"  [avatar]="user.avatar"></app-user>
+    }  
+</ul>
+

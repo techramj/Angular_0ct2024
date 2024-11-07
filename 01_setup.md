@@ -42,3 +42,12 @@ npm start
 ```
 ng server
 ```
+
+
+
+## module
+## pipe
+## routing
+## forms / binding (one way binding, two way binding)
+## http
+## lifecycle

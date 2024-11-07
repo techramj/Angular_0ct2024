@@ -1,4 +1,8 @@
 @for(e of employees; track e.id){
     <!--app-emp [id]="e.id" [name]="e.name" [salary]="e.salary"></app-emp-->
-    <app-emp [emp]="e"></app-emp>
+    <app-emp [emp]="e"
+    (increment) = "incrementSalary($event)"
+    ></app-emp>  
 }
+<hr>
+<button (click)="showDetails()">Display Details</button>

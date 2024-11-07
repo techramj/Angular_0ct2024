@@ -7,7 +7,20 @@
   </ul>
   -->
 
+  <!--
   <ul id="users">
-    <li><app-user [id]="selectedUser.id" [name]="selectedUser.name" [avatar]="selectedUser.avatar" /></li>
+    <li><app-user 
+      [id]="selectedUser.id" 
+      [name]="selectedUser.name" 
+      [avatar]="selectedUser.avatar" 
+      (selectUser)="onUserClick()"
+      /></li> 
+      <app-user1 />
+      <app-user2 />
+
+    
   </ul>
+  -->
+ <app-users />
+  
 </main>
