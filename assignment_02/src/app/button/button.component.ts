@@ -9,4 +9,11 @@ import { Component } from '@angular/core';
 })
 export class ButtonComponent {
 
+  buttonCount = 0;
+
+
+  onButtonClick(){
+    this.buttonCount++;
+  }
+
 }

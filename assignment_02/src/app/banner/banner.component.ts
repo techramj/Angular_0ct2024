@@ -8,5 +8,8 @@ import { Component } from '@angular/core';
   styleUrl: './banner.component.css'
 })
 export class BannerComponent {
+  count:number  = 5;
+
+
 
 }
