@@ -51,3 +51,21 @@ ng server
 ## forms / binding (one way binding, two way binding)
 ## http
 ## lifecycle
+## directive
+
+
+## Assignment 02
+Banner
+  Congratulation! You receive silver batch.
+  Congratulation! You receive Golder batch.
+  Congratulation! You receive Platinum batch.
+
+
+ButtonCount
+
+
+Button
+  Button. click  
+
+
+app-comp

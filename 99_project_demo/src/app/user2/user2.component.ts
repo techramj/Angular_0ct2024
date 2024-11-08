@@ -23,5 +23,6 @@ export class User2Component {
     const idx = Math.floor(Math.random()*DUMMY_USERs.length);
     this.selectedUser.set(DUMMY_USERs[idx]);
     console.log("After button click",this.selectedUser);
+    
   }
 }
