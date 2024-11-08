@@ -10,5 +10,5 @@ import { BannerComponent } from '../banner/banner.component';
   styleUrl: './button-banner.component.css'
 })
 export class ButtonBannerComponent {
-
+   bbCount:number = 0;
 }
