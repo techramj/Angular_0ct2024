@@ -10,5 +10,5 @@ import { AngularBasicComponent } from './basic/angular-basic/angular-basic.compo
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = '02_angular_basic';
+  title = 'abc';
 }
