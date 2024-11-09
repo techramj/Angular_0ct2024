@@ -1,0 +1,94 @@
+<div class="container">
+  <h2 [ngClass]="['A','B']">{{title}}</h2>
+
+  <div>
+    Today is: {{time}}
+  </div>
+
+  <input type="checkbox" [(ngModel)]="show"> Show/Hide color list {{show}}
+  @if(show){
+    <div>
+      <h3>My Favourite colors</h3>
+      <ul>
+        @for(item of colors; track item){
+          <li  [ngStyle]="{'color':item}">{{item}}</li>
+        }
+      </ul>
+    </div>
+  }
+ 
+
+
+  <div [ngClass]="{'A':show,'B':hide}">  
+    <h3>Select Day</h3>
+    <!--<input type="number" [value]="day"> {{day}} <br> -->
+    <input type="number" [min]="min" [max]="max"  [(ngModel)] = "day">{{day}}
+    <div [ngSwitch]="day">
+      <div *ngSwitchCase="1">Monday</div>
+      <div *ngSwitchCase="2">Tuesday</div>
+      <div *ngSwitchCase="3">Wednesday</div>
+      <div *ngSwitchCase="4">THursday</div>
+      <div *ngSwitchCase="5">Friday</div>
+      <div *ngSwitchCase="6">Saturday</div>
+      <div *ngSwitchCase="7">Sunday</div>
+      <div *ngSwitchDefault="1">wrong Input</div>
+    </div>
+  </div>
+
+  <br>
+  <button (click)="showHide()">show/hide employees details</button>
+  <br>
+  <br>
+  <div *ngIf="hide">
+    Employee : {{employee}}
+    <br>
+    Employee :{{employee | json}}
+    <pre>
+      Employee Id     : {{employee.id}}
+      Name            : {{employee.name}}
+      Name(upper case): {{employee.name | uppercase}}
+      Name(lower case): {{employee.name | lowercase}}
+      Name(title case): {{employee.name | titlecase}}
+
+      Salary          : {{employee.salary}}
+      Salary          : {{employee.salary | number}}
+      Salary          : {{employee.salary | number:'9.2-4'}}
+      Salary          : {{employee.salary | currency}}
+      Salary          : {{employee.salary | currency:'INR'}}
+
+      variable        : {{employee.variable}}
+      variable        : {{employee.variable | percent}}
+
+      Gender          : {{employee.gender}}
+      Gender          : {{employee.gender}}
+      IsMarried       : {{employee.isMarried}}
+      City            : {{employee.city}}
+
+      DOJ             : {{employee.doj}}
+      DOJ(date)       : {{employee.doj | date}} 
+      DOJ(short date) : {{employee.doj | date:'short'}} 
+      DOJ(medium date): {{employee.doj | date:'medium'}} 
+      DOJ(long date)  : {{employee.doj | date:'long'}} 
+      DOJ (full date)            : {{employee.doj | date:'full'}} 
+      DOJ('dd-MM-yyyy hh:mm:ss'): {{employee.doj | date:'dd-MM-yyyy hh:mm:ss'}} 
+      DOJ('dd-MM-YY')            : {{ employee.doj | date:'dd-MM-yy'}} 
+      DOJ(time)        : {{employee.doj | date:'shortTime'}}
+      DOJ(time)        : {{employee.doj | date:'mediumTime'}}
+      DOJ(time)        : {{employee.doj | date:'longTime'}}    
+      
+      Mobile           : {{employee.mobile}}
+      Mobile           : XXXXXXXX{{employee.mobile | slice:8:10}}
+
+      Pan              : {{employee.pan}}
+      Pan              : {{employee.pan |uppercase|slice:0:2}}XXXXXX{{employee.pan |uppercase|slice:8:10}}
+
+
+
+
+
+      
+    </pre>
+  </div>
+
+  Time: {{time | async}}
+</div>
