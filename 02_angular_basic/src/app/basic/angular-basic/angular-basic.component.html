@@ -60,9 +60,14 @@
       variable        : {{employee.variable | percent}}
 
       Gender          : {{employee.gender}}
-      Gender          : {{employee.gender}}
+      Gender          : {{employee.gender | gender}}
       IsMarried       : {{employee.isMarried}}
-      City            : {{employee.city}}
+      City Details
+      <ol>
+        @for(item of employee.city | keyvalue ; track item){
+          <li>{{item.key}}   : {{item.value}} </li>
+        }
+      </ol>
 
       DOJ             : {{employee.doj}}
       DOJ(date)       : {{employee.doj | date}} 

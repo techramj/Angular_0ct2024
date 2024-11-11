@@ -2,11 +2,12 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Observable, Subscriber } from 'rxjs';
+import { GenderPipe } from '../../shared/pipes/gender.pipe';
 
 @Component({
   selector: 'app-angular-basic',
   standalone: true,
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule, GenderPipe],
   templateUrl: './angular-basic.component.html',
   styleUrl: './angular-basic.component.css'
 })
@@ -32,7 +33,7 @@ export class AngularBasicComponent {
     mobile: '9922334455',
     pan:'abcd01915m',
     isMarried:true,
-    city:'pune'
+    city: {name:'Pune', temperature:'28.5', lattitude: "10.32 north", longitude:"73.51 east"}
   }
 
   showHide(){
