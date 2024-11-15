@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, input } from '@angular/core';
 
 
 @Component({
@@ -10,9 +10,13 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class UserComponent {
   
-  @Input({required:true}) id!:string;
-  @Input({required:true}) name!:string;
+  //@Input({required:true}) id!:string;
+  
+  //@Input({required:true}) name!:string;
   @Input({required:true}) avatar!:string;
+
+  id = input.required<string>();
+  name = input.required<string>();
 
   @Output() selectUser = new EventEmitter();
 
