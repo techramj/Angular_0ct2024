@@ -5,10 +5,17 @@ ng new 00_task_management
 # create component
 ```
         app-component
+          loop
+            <app-user [user]=user>
 
     header    user    tasks
+                      list of tasks
 
-                       task
+                       task                             new-tasks
+                       button>complete<button>          Add task button
+                                                        title
+                                                        summary
+                                                        dueDate
 
 
 ```
