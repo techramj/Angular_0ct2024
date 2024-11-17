@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { type User } from '../model/user.model';
+import { type User } from '../user';
 import { CardComponent } from '../shared/card/card.component';
 
 @Component({

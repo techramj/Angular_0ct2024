@@ -1,6 +1,7 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { type Task } from '../../task';
+import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
+import { type Task } from '../../model/task.model';
 import { CardComponent } from '../../shared/card/card.component';
+import { TasksService } from '../tasks.service';
 
 @Component({
   selector: 'app-task',
@@ -10,12 +11,15 @@ import { CardComponent } from '../../shared/card/card.component';
   styleUrl: './task.component.css'
 })
 export class TaskComponent {
- @Input() task!:Task;
- @Output() select = new EventEmitter<Task>();
-
-
+ @Input() task!:Task ;
+ //taskService = new TasksService();
+ //inject can be done in two way. using contrutor and another one is using inject function
+ 
+  //constructor(private tasksService: TasksService){} 
+  tasksService = inject(TasksService);
+  
  onCompleteTask(){
-  this.select.emit(this.task);
+  this.tasksService.removeTasks(this.task.id);
  }
 
 }

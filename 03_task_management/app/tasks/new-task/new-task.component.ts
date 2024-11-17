@@ -1,6 +1,7 @@
-import { Component, EventEmitter,Input, Output } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { TasksService } from '../tasks.service';
+import { Task } from '../../task';
+import { type NewTask } from '../../new-task';
 
 @Component({
   selector: 'app-new-task',
@@ -10,10 +11,9 @@ import { TasksService } from '../tasks.service';
   styleUrl: './new-task.component.css'
 })
 export class NewTaskComponent {
-  @Input({required:true}) userId!:string;
-  @Output() close = new EventEmitter<void>();
-  //@Output() newTask = new EventEmitter<NewTask>();
-  constructor(private tasksService: TasksService){}
+ 
+  @Output() cancelButton = new EventEmitter<void>();
+  @Output() newTask = new EventEmitter<NewTask>();
 
   title = '';
   summary = '';
@@ -21,7 +21,7 @@ export class NewTaskComponent {
 
   onCancel(){
     console.log('cancel clickd..');
-    this.close.emit();
+    this.cancelButton.emit();
   }
 
   onAddTask(){
@@ -30,12 +30,11 @@ export class NewTaskComponent {
     let dueDate = this.dueDate;
     this.newTask.emit({title,summary,dueDate});
     */
-   this.tasksService.addTask(
-    {title:this.title, 
-      summary:this.summary, 
-      dueDate:this.dueDate}, 
-      this.userId);
-      this.close.emit();
+   this.newTask.emit({
+    title:this.title,
+    summary:this.summary,
+    dueDate:this.dueDate
+   });
   }
 
 }
