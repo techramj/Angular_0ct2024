@@ -1,0 +1,32 @@
+:host{
+    display: block;
+    max-width: 50rem;
+    margin: 2rem auto;
+    padding: 0 1rem 1rem 1rem;
+    border: 2px solid #dad6dd;
+    border-radius: 4px;
+    text-align: center;
+    
+}
+
+h2{
+    margin-top: 0;
+    background-color: aliceblue;
+    color: grey;
+    display: inline-block;
+    border-radius: 0 0 4px 4px;  
+}
+
+
+.a{
+    color:red;
+}
+
+
+.b{
+    font-size: 30px;
+}
+.a-b{
+    padding: 0 10px 10px 10px;
+    background-color: aquamarine;
+}

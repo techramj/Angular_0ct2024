@@ -1,0 +1,18 @@
+<div>
+    <button class="btn btn-danger"  (click)="onToggleVisibility()">Toggle Lifecycle component visibility</button>
+    <button class="btn btn-primary" (click)="onChangeInputText()">On Change Input Text value</button>
+    <br>
+   
+    <div class="input-group input-group-sm mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-sm">Font Size</span>
+        <input type="number" class="form-control" aria-label="Sizing example input" 
+        aria-describedby="inputGroup-sizing-sm" [(ngModel)]="msg">
+    </div>
+</div>
+
+@if(visibleFlag){
+    <app-lifecycle [text] = "inputText" [size]="msg">Lifecycle Example</app-lifecycle>
+    
+}
+
+{{msg}}

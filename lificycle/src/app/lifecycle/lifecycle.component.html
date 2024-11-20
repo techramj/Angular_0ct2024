@@ -1,0 +1,20 @@
+<div class="card">
+    <h1><ng-content/></h1>
+    <h2>The Lifecycle Component</h2>
+    <p [style]="{'font-size':size+'px'}">Text: {{text}}</p>
+    <p class="a">Active text</p>
+    <p [class.a]="applyCss">Active text</p>
+    <p [class.a]="applyCss">Active text</p>
+
+    <br>
+
+    <p class="a b">Active text</p>
+    <p [class.a]="applyCss" [class.b]="applyCss">Active text</p>
+    <p [class]="['a','b']">Active text</p>
+    <p [class]="{
+        a: applyCss,
+        b: applyCss,
+        'a-b':applyCss
+    }">Active text</p>
+</div>
+

@@ -63,3 +63,25 @@ same step as abvoe. but don't use bootstrap property.
 3. module -> @NgModule
 
 
+
+
+
+# directive
+
+```
+<input name="user" [(ngModel)]="username">
+
+component: template + component class
+
+```
+
+## two type of directive
+### Attribute directive
+<p [class]="{active:true}">
+
+### structural directive
+```
+<p *ngIf="somecondition"></p>
+*ngFor
+```
+
