@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="https://angular.dev/">Angular</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" 
+            aria-current="page" 
+            href="https://github.com/techramj/Angular_reference_code"
+            appSafeLink
+            >Angular code reference</a>
+          </li>
+          <li class="nav-item" *appAuth="'admin'">
+            <a class="nav-link"   href="https://github.com/techramj/"
+            appSafeLink
+            >Angular project</a>
+          </li>
+
+          <li class="nav-item">
+            <!--a class="nav-link" 
+            href="https://github.com/techramj/Angular_0ct2024" 
+            appSafeLink [pathParam]="'tree/main/lificycle'"
+            >Angular project Lifecycle example</a-->
+
+            <a class="nav-link" 
+            href="https://github.com/techramj/Angular_0ct2024" 
+            [appSafeLink] ="'/tree/main/lificycle'"
+            >Angular project Lifecycle example</a>
+
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>

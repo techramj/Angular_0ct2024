@@ -1,0 +1,44 @@
+<app-seed-doc></app-seed-doc>
+
+<app-auth />
+
+<!--div *ngIf="isAdmin()">
+ 
+</div-->
+
+<!--@if (isAdmin()) {
+  <p>only admin can see this.</p>
+}
+-->
+
+<!--p [appAuth]="'admin'" >only admin can see this.</p-->
+
+<!--
+<ng-template [appAuth]="'admin'">
+  <p>only admin can see this.</p>
+</ng-template>
+
+<ng-template [appAuth]="'guest'">
+  <p>only guest can see this.</p>
+</ng-template>
+
+<ng-template [appAuth]="'user'">
+  <p>only user can see this.</p>
+</ng-template>
+
+-->
+
+<p *appAuth="'admin'" >only admin can see this.</p>
+<p *appAuth="'user'" >only user can see this.</p>
+<p *appAuth="'guest'" >only guest can see this.</p>
+
+
+<ng-template [appAuth]="'user'">
+  <p>only user can see this!!!!!.</p>
+</ng-template>
+
+
+
+
+
+
