@@ -13,5 +13,4 @@ export class LogDirective {
     console.log('CLICKED');
     console.log(this.elementRef.nativeElement);
   }
-
 }

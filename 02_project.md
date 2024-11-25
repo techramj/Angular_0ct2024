@@ -1,6 +1,22 @@
 # create a project
 ng new 00_task_management
 
+## step to add bootstrap
+```
+step 1:run the below command
+npm install --save bootstrap
+
+step 2 : add the path of css and js file in angular.json as below
+
+           "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/styles.css"
+            ],
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
+```
+
 
 # create component
 ```
@@ -85,3 +101,31 @@ component: template + component class
 *ngFor
 ```
 
+
+## directive example 
+```
+ng g c auth --skip-tests
+ng g c seed-doc --skip-tests
+ng g s auth/auth --skip-tests
+
+file for declaring the type
+
+```
+## custom structural directive
+```
+ng g d auth/auth --skip-tests
+
+
+```
+
+
+
+
+
+# Routing
+## step to enable the routing
+```
+main.ts file
+
+
+```

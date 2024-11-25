@@ -1,0 +1,13 @@
+<app-header (linkClick)="onLinkClick($event)"></app-header>
+
+<div class="container">
+@if(compName === 'comp1'){
+    <app-comp1></app-comp1>
+}
+@if(compName === 'comp2'){
+    <app-comp2></app-comp2>
+}  
+
+
+<router-outlet></router-outlet>
+</div>
