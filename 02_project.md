@@ -124,8 +124,35 @@ ng g d auth/auth --skip-tests
 
 # Routing
 ## step to enable the routing
+1. main.ts file
 ```
-main.ts file
+bootstrapApplication(AppComponent,{
+  providers :[
+    provideRouter([
+      {path:'comp3', component: Comp3Component}
+    ])
+  ]
+}).catch((err) => console.error(err));
+```
 
+OR
+1.  app.routes.ts
+```
+export const routes: Routes = [
+    {path:'comp3', component: Comp3Component}
+];
+```
+
+2.  main.ts
+```
+bootstrapApplication(AppComponent,{
+  providers :[
+    provideRouter(routes)
+  ]
+}).catch((err) => console.error(err));
 
 ```
+
+or
+
+localhost:4200/query-exp?a=angular&b=bootstrap&c=css&d=dom&e=eval

@@ -1,0 +1,7 @@
+<ul>
+    @for(task of userTasks; track task.id){
+        <app-task [task]="task"></app-task>
+    } @empty {
+       <p>Threre are no tasks for the user. Add the task.</p> 
+    }
+</ul>
