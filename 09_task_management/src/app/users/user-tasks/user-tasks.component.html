@@ -1,1 +1,11 @@
-<p>user {{userId()}} selected</p>
+<section id="tasks">
+    <header>
+        <h2>{{userName()}}'s Tasks</h2>
+        <menu>
+            <a routerLink="tasks/new">Add Tasks</a>
+        </menu>
+    </header>
+    
+
+    <router-outlet />
+</section>

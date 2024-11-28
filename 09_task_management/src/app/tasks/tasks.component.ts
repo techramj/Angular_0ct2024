@@ -11,8 +11,11 @@ import { TasksService } from './tasks.service';
   styleUrl: './tasks.component.css'
 })
 export class TasksComponent {
-  
   private taskService = inject(TasksService);
-  userTasks: Task[] = this.taskService.allTasks();
+  userTasks: Task[] = [];
+
+  constructor(){
+    console.log('constructor called...');
+  }
 
 }
