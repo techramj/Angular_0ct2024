@@ -1,5 +1,7 @@
-import { Component, DestroyRef, OnInit, computed, inject, input, signal } from '@angular/core';
-import { ActivatedRoute, RouterLink, RouterOutlet } from '@angular/router';
+import { Component, DestroyRef, OnChanges, OnInit, 
+  SimpleChanges, 
+  computed, inject, input, signal } from '@angular/core';
+import { ActivatedRoute, RouterLink, RouterOutlet, ResolveFn, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { UsersService } from '../users.service';
 import { Subscription } from 'rxjs';
 
@@ -10,13 +12,27 @@ import { Subscription } from 'rxjs';
   templateUrl: './user-tasks.component.html',
   styleUrl: './user-tasks.component.css'
 })
-export class UserTasksComponent  {
+export class UserTasksComponent  implements OnChanges {
     userId = input.required<string>();
+    message = input.required<string>();
+
     userName= computed(() => this.userService.users.find(u => u.id === this.userId())?.name ||'');
     private userService = inject(UsersService);
 
-     
+    ngOnChanges(changes: SimpleChanges): void {
+      console.log(changes);
+    }
+    ngOnInit(){
+      console.log('message =', this.message());
+    }   
 }
+
+export const resolveUserName : ResolveFn<string> 
+   = (route:ActivatedRouteSnapshot,router: RouterStateSnapshot) =>{
+   console.log("resolver called..");
+    return "";
+}
+
 
 
 //aproach 1: using subcription 

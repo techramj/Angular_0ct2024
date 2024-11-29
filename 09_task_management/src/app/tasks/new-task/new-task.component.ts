@@ -1,22 +1,27 @@
-import { Component, input } from '@angular/core';
+import { Component, inject, input, signal } from '@angular/core';
 import { TasksService } from '../tasks.service';
 import { FormsModule } from '@angular/forms';
-import { DatePipe } from '@angular/common';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-new-task',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, RouterLink],
   templateUrl: './new-task.component.html',
   styleUrl: './new-task.component.css'
 })
 export class NewTaskComponent {
   userId = input.required<string>();
-  constructor(private tasksService: TasksService){}
+  private tasksService = inject(TasksService);
+  private router = inject(Router);
 
-  title = '';
-  summary = '';
-  dueDate = '';
+  /*constructor(private tasksService: TasksService, 
+              private router:Router){}
+              */
+
+  title = signal('');
+  summary = signal('');
+  dueDate = signal('');
 
   onCancel(){
     console.log('cancel clickd..');
@@ -24,6 +29,13 @@ export class NewTaskComponent {
   }
 
   onAddTask(){
-   
+   this.tasksService.addTask(
+    {title:this.title(), summary:this.summary(), dueDate: this.dueDate()}, 
+    this.userId());
+
+    //navigate to /users/{userid}/tasks
+
+    //this.router.navigate(["/users"+"/"+this.userId()+"/"+"tasks"]);
+    this.router.navigate(["/users", this.userId(),"tasks"]);
   }
 }

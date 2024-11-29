@@ -4,6 +4,6 @@ import { NewTaskComponent } from "../tasks/new-task/new-task.component";
 
 export const userRoutes: Routes = [
     {path:'', redirectTo:'tasks', pathMatch:"full"},
-        {path:'tasks', component:TasksComponent},  // <domain>/users/u01/tasks
-        {path:'tasks/new', component: NewTaskComponent}
+    {path:'tasks', component:TasksComponent},  // <domain>/users/u01/tasks
+    {path:'tasks/new', component: NewTaskComponent}
 ];
