@@ -2,14 +2,15 @@ import { Routes } from '@angular/router';
 import { NoTaskComponent } from './no-task/no-task.component';
 import { TasksComponent } from './tasks/tasks.component';
 import { UserTasksComponent, resolveUserName } from './users/user-tasks/user-tasks.component';
-import { userRoutes } from './users/users.routes';
+//import { userRoutes } from './users/users.routes';
 import { NotFoundComponent } from './not-found/not-found.component';
 
 export const routes: Routes = [
     {path:'', component: NoTaskComponent},
     {path: 'users/:userId', 
      component: UserTasksComponent,
-     children : userRoutes,
+     //children : userRoutes,
+     loadChildren : () => import('./users/users.routes').then(mode => mode.userRoutes),
      data:{
         message : 'Hello!'
      },

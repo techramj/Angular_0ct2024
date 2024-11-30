@@ -156,3 +156,19 @@ bootstrapApplication(AppComponent,{
 or
 
 localhost:4200/query-exp?a=angular&b=bootstrap&c=css&d=dom&e=eval
+
+
+## step to enable routing in the project
+
+
+## lazy loading
+```
+//app-component
+//user-tasks
+//users
+//user
+tasks
+new-tasks
+N//o-component 
+
+```
