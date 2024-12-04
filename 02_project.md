@@ -172,3 +172,10 @@ new-tasks
 N//o-component 
 
 ```
+
+
+# forms
+1. Template-driven
+2. Reactive
+
+## template driven forms

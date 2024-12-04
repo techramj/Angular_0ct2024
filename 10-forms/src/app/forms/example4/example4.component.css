@@ -1,0 +1,8 @@
+.control:has(.ng-invalid.ng-touched){
+    color:red;
+}
+
+input.ng-invalid.ng-touched{
+    background-color: palevioletred;
+    border-color:red;
+}

@@ -1,0 +1,17 @@
+<form [formGroup]="form" >
+    <div class="mb-3 control">
+      <label for="email" class="form-label">Email</label>
+      <input type="email" class="form-control" 
+      id="email" name="email"
+      [formControl]="form.controls.email"
+      >
+      
+    </div>
+    <div class="mb-3 control">
+      <label for="password" class="form-label">Password</label>
+      <input type="password" class="form-control" id="password" 
+      name="password" 
+      >
+    </div>
+    <button class="btn btn-primary">Submit</button>
+  </form>

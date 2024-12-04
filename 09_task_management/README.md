@@ -23,3 +23,9 @@ ng g c shared/card --skip-tests
 <url>/user/:userId/tasks/new
 
 ```
+
+## Lazy loading
+1. choose the component to be lazy laoding
+2. avoid import for component which should be loaded as lazy loading
+3. isntead of component user loadComponent propery
+4. loadComponent required function () => import(path).then

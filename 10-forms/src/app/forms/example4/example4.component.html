@@ -1,0 +1,32 @@
+<form #form1="ngForm"  (ngSubmit) ="onSubmit()">
+    <div class="mb-3 control">
+      <label for="email" class="form-label">Email</label>
+      <input type="email" class="form-control" 
+      id="email" name="email"
+      required
+      email 
+      #email="ngModel"
+      ngModel
+      >
+      
+    </div>
+    <div class="mb-3 control">
+      <label for="password" class="form-label">Password</label>
+      <input type="password" class="form-control" id="password" 
+      name="password" 
+      required
+      minlength ="3"
+      #password="ngModel"
+      ngModel
+      >
+    </div>
+    <button class="btn btn-primary">Submit</button>
+
+  @if(email.touched && email.invalid){
+    <p>Invalid email.</p>
+  }
+
+  @if(password.touched && password.invalid){
+    <p>Invalid password. Minimum 3 character required.</p>
+  }
+  </form>
