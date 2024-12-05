@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-example5',
@@ -9,9 +9,32 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
   styleUrl: './example5.component.css'
 })
 export class Example5Component {
-  form = new FormGroup({
-    email: new FormControl(''),
-    password:new FormControl('')
+  form1 = new FormGroup({
+    email: new FormControl('',{
+      validators :[Validators.email, Validators.required]
+    }),
+    password:new FormControl('',{
+      validators: [Validators.required, Validators.minLength(3)]
+    })
   });
+
+  get emailIsInvalid(){
+    return this.form1.controls.email.touched 
+    && this.form1.controls.email.invalid;
+  }
+
+  get passwordsInvalid(){
+    return this.form1.controls.password.touched 
+    && this.form1.controls.password.invalid;
+  }
+
+  OnSubmit(){
+    if(this.form1.invalid){
+      return;
+    }
+    let enteredMail = this.form1.value.email;
+    let password = this.form1.value.password;
+    console.log(enteredMail, password);
+  }
 
 }

@@ -1,9 +1,10 @@
-<form [formGroup]="form" >
+<form [formGroup]="form1" (ngSubmit)="OnSubmit()" >
     <div class="mb-3 control">
       <label for="email" class="form-label">Email</label>
       <input type="email" class="form-control" 
       id="email" name="email"
-      [formControl]="form.controls.email"
+      [formControl]="form1.controls.email"
+
       >
       
     </div>
@@ -11,7 +12,15 @@
       <label for="password" class="form-label">Password</label>
       <input type="password" class="form-control" id="password" 
       name="password" 
+      formControlName = "password"
       >
     </div>
     <button class="btn btn-primary">Submit</button>
+    @if (emailIsInvalid) {
+      <p>Please enter valid email.</p>
+    }
+
+    @if (passwordsInvalid) {
+      <p>Please ener valid password. Minimum 3 character long.</p>
+    }
   </form>
