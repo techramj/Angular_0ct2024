@@ -1,0 +1,46 @@
+{
+  "employees": [
+    {
+      "id": "3",
+      "name": "sammer",
+      "salary": 10000,
+      "email": "sammer@seed.com"
+    },
+    {
+      "id": "4",
+      "name": "Jessica",
+      "salary": 50000,
+      "email": "jessica@seed.com"
+    },
+    {
+      "id": "5",
+      "name": "John",
+      "salary": 55000,
+      "email": "john@seed.com"
+    },
+    {
+      "id": "6",
+      "name": "Ajay",
+      "salary": 15000,
+      "email": "ajay@seed.com"
+    },
+    {
+      "id": "7",
+      "name": "Rohan",
+      "salary": 90000,
+      "email": "rohan@seed.com"
+    },
+    {
+      "id": "8",
+      "name": "Abhi",
+      "salary": 10000,
+      "email": "abhi@seed.com"
+    },
+    {
+      "id": "7298",
+      "name": "Amol",
+      "salary": 10000,
+      "email": "abhi@seed.com"
+    }
+  ]
+}

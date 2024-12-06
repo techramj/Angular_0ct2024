@@ -10,10 +10,10 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 })
 export class Example5Component {
   form1 = new FormGroup({
-    email: new FormControl('',{
+    email: new FormControl('a@test.com',{
       validators :[Validators.email, Validators.required]
     }),
-    password:new FormControl('',{
+    password:new FormControl('12',{
       validators: [Validators.required, Validators.minLength(3)]
     })
   });

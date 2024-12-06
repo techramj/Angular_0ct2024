@@ -179,3 +179,115 @@ N//o-component
 2. Reactive
 
 ## template driven forms
+
+
+empId
+name
+salary
+email
+
+
+# step to expose the employee rest API
+1. create the folder 
+```
+mkdir 11_ems_db
+cd 11_ems_db
+
+```
+
+2. execute the below command
+```
+npm init -y
+```
+
+3. create the json file
+```
+employees.json
+
+```
+
+4. add the few dummy employee data
+```
+{
+  "employees" :[
+    {"id":1, "name":"sam", "salary":5000, "email":"sam@seed.com"},
+    {"id":1, "name":"samson", "salary":15000, "email":"samson@seed.com"},
+    {"id":1, "name":"sammer", "salary":10000, "email":"sammer@seed.com"},
+    {"id":1, "name":"Jessica", "salary":50000, "email":"jessica@seed.com"},
+    {"id":1, "name":"John", "salary":55000, "email":"john@seed.com"},
+    {"id":1, "name":"Ajay", "salary":15000, "email":"ajay@seed.com"}
+  ]
+}
+
+```
+
+5. install json-server
+```
+npm install -g json-server
+```
+
+6. execute the below command to run the server
+```
+npx json-server --watch employees.json
+```
+
+7. or set the above command with npm start
+```
+add the above command in package.json as below
+"scripts": {
+    "start": "npx json-server --watch employees.json",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+```
+8. start the server
+```
+npm start
+
+```
+
+# step for java
+1. create spring boot application using spring starter
+2. select the required dependency
+3. create employeeController to perform CRUD
+
+
+## Rest API
+1. get
+```
+fetch all employees details
+    http://localhost:3000/employees
+
+fetch employee details by id
+   http://localhost:3000/employees/:id
+   where :id  is path variable
+
+```
+2. post
+```
+adding the employees
+POST: http://localhost:3000/employees
+body:
+{
+  "name": "Amol",
+  "salary": 10000,
+  "email": "abhi@seed.com"
+}
+
+```
+3. put
+```
+update employees
+PUT: http://localhost:3000/employees/:id
+boyd:
+{
+  "id" : "1"
+  "name": "Amol",
+  "salary": 10000,
+  "email": "abhi@seed.com"
+}
+
+```
+4. delete
+```
+DELETE: http://localhost:3000/employees/:id
+```
