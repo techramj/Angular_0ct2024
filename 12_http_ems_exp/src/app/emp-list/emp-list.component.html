@@ -1,0 +1,42 @@
+@if(isFetching()){
+    <p>Data fetching is in progress......</p>
+}
+@if(errorMsg()){
+    <p style="color:red">{{errorMsg()}}</p>
+}
+@if(!errorMsg()) {
+<div class="container">
+    <h3 class="mb-3-text-center">Employees Details</h3>
+    <div class="col-md-12">
+        <table class="table table-striped table-bordered">
+            <thead>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Salary</th>
+                <th>Email</th>
+                <th>Action</th>
+            </thead>
+            <tbody>
+                @for (emp of employees(); track emp.id) {
+                    <tr>
+                        <td>{{emp.id}}</td>
+                        <td>{{emp.name}}</td>
+                        <td>{{emp.salary}}</td>
+                        <td>{{emp.email}}</td>
+                        <td>
+                            <button class="btn btn-primary"
+                            [routerLink]="['/employees', emp.id, 'edit']"
+                            >Edit</button>
+                            <button class="btn btn-danger"
+                            (click)="deleteEmployee(emp.id)"
+                            >Delete</button>
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+}

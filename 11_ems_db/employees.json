@@ -1,12 +1,6 @@
 {
   "employees": [
     {
-      "id": "3",
-      "name": "sammer",
-      "salary": 10000,
-      "email": "sammer@seed.com"
-    },
-    {
       "id": "4",
       "name": "Jessica",
       "salary": 50000,
@@ -29,18 +23,6 @@
       "name": "Rohan",
       "salary": 90000,
       "email": "rohan@seed.com"
-    },
-    {
-      "id": "8",
-      "name": "Abhi",
-      "salary": 10000,
-      "email": "abhi@seed.com"
-    },
-    {
-      "id": "7298",
-      "name": "Amol",
-      "salary": 10000,
-      "email": "abhi@seed.com"
     }
   ]
 }
